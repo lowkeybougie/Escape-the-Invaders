@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6364456620059712346}
   - component: {fileID: 6818532061929275252}
   - component: {fileID: 6862415148418580751}
+  - component: {fileID: 4852938642034534552}
   m_Layer: 0
   m_Name: Dumpster
   m_TagString: Obstacle
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4aa01bef04456d489a93b8adc7fec01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4852938642034534552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444343756574715230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0a4a3e568691d40b504518f44a9e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
