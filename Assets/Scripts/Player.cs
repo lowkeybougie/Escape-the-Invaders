@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     private CharacterController character;
     private Vector3 direction;
+    [SerializeField] public AudioClip[] gruntSoundClips;
 
     public float jumpForce = 8f;
     public float gravity = 9.81f * 2f;
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         direction = Vector3.zero;
+       
     }
 
     private void Update()
@@ -29,7 +31,11 @@ public class Player : MonoBehaviour
 
             if (Input.GetButton("Jump")) {
                 direction = Vector3.up * jumpForce;
+                //SoundManager.instance.PlaySoundFXClip(gruntSoundClip, transform, 1f);
+                SoundManager.instance.PlayRandomSoundFXClips(gruntSoundClips, transform, 1f);
+            
             }
+
         }
 
         character.Move(direction * Time.deltaTime);
@@ -38,6 +44,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle")) {
+            SoundManager.instance.PlayRandomSoundFXClips(gruntSoundClips, transform, 1f);
             GameManager.Instance.GameOver();
         }
     }

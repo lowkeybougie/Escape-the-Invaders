@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+    [SerializeField] private TextMeshProUGUI highScoreTextFont;
     [SerializeField] private Button retryButton;
 
     private Player player;
     private Spawner spawner;
+    private Beam beam;
  
 
     private float score;
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
+        beam = FindObjectOfType<Beam>();
 
         NewGame();
     }
@@ -60,7 +64,10 @@ public class GameManager : MonoBehaviour
         enabled = true;
 
         player.gameObject.SetActive(true);
+        beam.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
+        highScoreText.gameObject.SetActive(true);
+        highScoreTextFont.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
 
@@ -73,7 +80,10 @@ public class GameManager : MonoBehaviour
         enabled = false;
 
         player.gameObject.SetActive(false);
+        beam.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
+        highScoreText.gameObject.SetActive(false);
+        highScoreTextFont.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
 
