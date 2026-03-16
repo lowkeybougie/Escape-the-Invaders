@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
         UpdateHiscore();
     }
-
+       
     public void GameOver()
     {
         gameSpeed = 0f;
